@@ -1,5 +1,13 @@
 TAX_BRACKETS_2020 = (
+    {"max": 9875, "rate": 10},
+    {"max": 40125, "rate": 12},
+    {"max": 85525, "rate": 22},
+    {"max": 163300, "rate": 24},
+    {"max": 207350, "rate": 32},
+    {"max": 518400, "rate": 35},
+    {"rate": 37}
 )
+
 
 def calculate_tax_by_bracket(income, brackets):
     if income <= 0:
@@ -22,6 +30,7 @@ def calculate_tax_by_bracket(income, brackets):
         total_tax += round(bracketted_income * rate / 100)
 
     return total_tax
+
 
 def calculate_tax_2020(income):
     return calculate_tax_by_bracket(income, TAX_BRACKETS_2020)
